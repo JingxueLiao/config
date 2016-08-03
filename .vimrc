@@ -12,10 +12,10 @@ nmap <Leader>w :w<CR>
 nmap <Leader>x :x<CR>
 nmap <Leader>Q :q!<CR>
 nmap <Leader>W :w<CR>
-nmap ]b :bnext<CR>
-nmap [b :bprevious<CR>
 nmap ]t :tnext<CR>
 nmap [t :tprevious<CR>
+nmap ]b :bnext<CR>
+nmap [b :bprevious<CR>
 
 " Editor
 set nocompatible                        " set incompatible with vi
@@ -104,6 +104,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/indexer.tar.gz'
+Plugin 'vim-scripts/DfrankUtil'
+Plugin 'vim-scripts/vimprj'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'derekwyatt/vim-protodef'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,5 +129,104 @@ filetype plugin indent on    " required
 
 set background=dark
 colorscheme solarized
+
+" <--
+
+" -->
+" NERD Tree
+
+nmap <Leader>lf :NERDTreeToggle<CR>
+
+" <--
+
+" -->
+" Tagbar
+
+nmap <Leader>li :TagbarToggle<CR>
+
+let g:tagbar_type_cpp = {
+    \ 'kinds' : [
+         \ 'c:classes:0:1',
+         \ 'd:macros:0:1',
+         \ 'e:enumerators:0:1', 
+         \ 'f:functions:0:1',
+         \ 'g:enumeration:0:1',
+         \ 'l:local:0:1',
+         \ 'm:members:0:1',
+         \ 'n:namespaces:0:1',
+         \ 'p:functions_prototypes:0:1',
+         \ 's:structs:0:1',
+         \ 't:typedefs:0:1',
+         \ 'u:unions:0:1',
+         \ 'v:global:0:1',
+         \ 'x:external:0:1'
+     \ ],
+     \ 'sro'        : '::',
+     \ 'kind2scope' : {
+         \ 'g' : 'enum',
+         \ 'n' : 'namespace',
+         \ 'c' : 'class',
+         \ 's' : 'struct',
+         \ 'u' : 'union'
+     \ },
+     \ 'scope2kind' : {
+         \ 'enum'      : 'g',
+         \ 'namespace' : 'n',
+         \ 'class'     : 'c',
+         \ 'struct'    : 's',
+         \ 'union'     : 'u'
+     \ }
+\ }
+
+" <--
+
+" -->
+" Indexer
+
+let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
+
+" <--
+
+" -->
+" Powerline
+
+let g:Powerline_colorscheme='solarized256'
+
+" <--
+
+" -->
+" MiniBufExpl
+
+nmap <Leader>lb :MBEToggle<CR>
+
+" <--
+
+" -->
+" Indent Guides
+
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+" <--
+
+" -->
+" NERD Commenter
+
+let g:NERDSpaceDelims=1
+
+" <--
+
+" -->
+" FSwitch
+
+nmap <silent> <Leader>sw :FSHere<CR>
+
+" <--
+
+" -->
+" Protodef 
+
+let g:disable_protodef_sorting=1
 
 " <--
