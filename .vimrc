@@ -115,8 +115,6 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'derekwyatt/vim-fswitch'
-Plugin 'derekwyatt/vim-protodef'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -214,19 +212,5 @@ let g:indent_guides_guide_size=1
 " NERD Commenter
 
 let g:NERDSpaceDelims=1
-
-" <--
-
-" -->
-" FSwitch
-
-nmap <silent> <Leader>sw :FSHere<CR>
-
-" <--
-
-" -->
-" Protodef 
-
-let g:disable_protodef_sorting=1
 
 " <--
